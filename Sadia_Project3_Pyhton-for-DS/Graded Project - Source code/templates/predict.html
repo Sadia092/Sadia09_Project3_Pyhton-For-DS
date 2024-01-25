@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>House Loan Eligibility Prediction</title>
+
+</head>
+
+<body>
+
+
+    <div>
+
+        <h1 style="font-size:50px">House Loan Eligibility Prediction</h1>
+
+    </div>
+
+    <p> Please enter the details in order to check your house loan eligibility <br>
+
+    </p>
+    <div class="hero-text">
+
+        <h1 style="font-size:50px">Loan approval Predictor</h1>
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+    <style>
+        .hero-text {
+          text-align: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+        }
+    </style>
+
+    <div style="color:	rgb(0, 0, 0)">
+        <form action="{{ url_for('predict')}}" method="post">
+
+            <label for="gender_male">Gender </label>
+
+            <select id="gender_male" name="gender_male">
+
+                <option disabled selected value> -- Select an option -- </option>
+
+                <option value="1">male</option>
+
+                <option value="0">female</option>
+
+            </select>
+
+
+            <br><br>
+
+            <label for="married_yes">Married </label>
+
+            <select id="married_yes" name="married_yes">
+
+                <option disabled selected value> -- Select an option -- </option>
+
+                <option value="1">yes</option>
+
+                <option value="0">no</option>
+
+            </select>
+            <br><br>
+
+            <label for="dependents"> Number of dependents </label> 
+
+            <select id="dependents" name="dependents">
+
+                <option disabled selected value> -- Select an option -- </option>
+
+                <option value="0">0</option>
+
+                <option value="1">1</option>
+
+                <option value="2">2</option>
+
+                <option value="3">3+</option>
+
+            </select>
+
+            <br><br>
+
+            <label for="education_notGrad">education</label>
+            <select id="education_notGrad" name="education_notGrad">
+
+                <option disabled selected value> -- Select an option -- </option>
+
+                <option value="0">graduate</option>
+
+                <option value="1">not graduate</option>
+
+            </select>
+
+            <br><br>
+
+            <label for="self_employed_yes"> self-employed? </label>
+
+            <select id="self_employed_yes" name="self_employed_yes">
+
+                <option disabled selected value> -- Select an option -- </option>
+
+                <option value="0">no</option>
+
+                <option value="1">yes</option>
+
+            </select>
+
+            <br><br>
+
+            <label for="applicantincome">Applicant Income($)</label>
+
+            <input type="text" name="applicantincome" required="required" />
+
+            <br><br>
+
+            <label for="coapplicantincome">Coapplicant Income($)</label>
+
+            <input type="text" name="coapplicantincome" required="required" />
+
+            <br><br>
+
+            <label for="loanamount">Loan Amount($)</label>
+
+            <input type="text" name="loanamount" required="required" />
+
+            <br><br>
+
+            <label for="loan_amount_term">Loan Amount Term (in months)</label> 
+
+            <input type="text" name="loan_amount_term" placeholder="Term in months" required="required" />
+
+            <br><br>
+
+            <label for="credit_history">Credit History</label> 
+
+            <select id="credit_history" name="credit_history">
+
+                <option disabled selected value> -- Select an option -- </option>
+
+                <option value="1">yes</option>
+
+                <option value="0">no</option>
+
+            </select>
+
+            <br><br>
+
+            <label for="property_area">Property Area</label> ;
+
+            <select id="property_area" name="property_area">
+
+                <option disabled selected value> -- Select an option -- </option>
+
+                <option value="0">Rural</option>
+
+                <option value="1">Semiurban</option>
+
+                <option value="2">Urban</option>
+
+            </select>
+
+        <br><br>
+
+            <input type="submit", value = "Submit">
+
+        </form>
+</div>
+
+<!-- <div class="hero-text">
+    <br><br><h3>{{ prediction_text }}<h3>
+</div> -->
+
+
+</body>
+
+</html>

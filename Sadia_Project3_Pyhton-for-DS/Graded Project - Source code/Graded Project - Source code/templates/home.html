@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Home Page</title>
+        <link href="{{ url_for('static') }}">             
+    </head>
+    <body></br></br></br></br></br>
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Please login/sign up to check loan eligibility</h1>
+             </div></br></br></br>
+            <h2 class="word">
+                <form action="{{ url_for('login') }}" method="post">
+                  <div class="msg">{{ msg }}</div>
+                    <input type="submit" class="btn" value="Login Now"></br>
+                </form>
+                <form action="{{ url_for('register') }}" method="post">
+                    <div class="msg">{{ msg }}</div>
+                      <input type="submit" class="btn" value="Register Now"></br>
+                  </form>
+            </h2>
+          </div>
+        </div>
+    </body>
+</html>
